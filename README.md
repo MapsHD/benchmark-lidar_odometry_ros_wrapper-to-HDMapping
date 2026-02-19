@@ -24,10 +24,11 @@ We now convert data from ROS1 to ROS2
 ```shell
 docker run -it -v ~/hdmapping-benchmark/data:/data --user 1000:1000 lidar_odometry_ros_wrapper_humble /bin/bash
 cd /data
-rosbags-convert --src reg-1.bag-pc.bag --dst reg-1-ros2 
+rosbags-convert --src reg-1.bag-pc.bag --dst reg-1-ros2
+exit 
 ```
 
-close terminal
+close terminal!
 
 ## Step 4 (run docker, file 'reg-1-ros2' should be in '~/hdmapping-benchmark/data')
 open new terminal
