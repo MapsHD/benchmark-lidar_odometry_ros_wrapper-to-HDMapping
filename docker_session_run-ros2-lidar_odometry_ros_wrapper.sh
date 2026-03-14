@@ -9,7 +9,7 @@ BAG_OUTPUT_CONTAINER='/ros2_ws/recordings'
 RECORDED_BAG_NAME="recorded-lidar_odometry_ros_wrapper"
 HDMAPPING_OUT_NAME="output_hdmapping"
 
-TOPIC='/livox/pointcloud'
+TOPIC='/velodyne_points'
 
 usage() {
   echo "Usage:"
@@ -76,7 +76,7 @@ docker run -it --rm \
     tmux send-keys -t '"$TMUX_SESSION"' '\''sleep 5
 source /opt/ros/humble/setup.bash
 source /ros2_ws/install/setup.bash
-ros2 launch lidar_odometry_ros lidar_odometry.launch.py config_file:=/ros2_ws/src/benchmark-lidar_odometry_ros_wrapper-to-HDMapping/src/lidar_odometry_ros_wrapper/lidar_odometry/config/mid360.yaml use_sim_time:=true pointcloud_topic:='"$TOPIC"'
+ros2 launch lidar_odometry_ros lidar_odometry.launch.py config_file:=/ros2_ws/src/benchmark-lidar_odometry_ros_wrapper-to-HDMapping/src/lidar_odometry_ros_wrapper/lidar_odometry/config/kitti.yaml use_sim_time:=true pointcloud_topic:='"$TOPIC"'
 '\'' C-m
 
     # ---------- PANEL 2: rosbag record ----------
